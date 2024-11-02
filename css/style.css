@@ -1,0 +1,473 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
+
+*{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    font-weight:400 ;
+}
+
+
+html{
+    font-size: 62.5%;
+}
+
+
+.section-heading{
+    font-size: 12rem;
+    font-weight: 700;
+    color: antiquewhite;
+    text-align: center;
+    letter-spacing: .4rem;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+
+body{
+    position: relative;
+}
+
+
+
+nav{
+    background-color: black;
+    height: 14rem;
+    width: 100%;
+    position: fixed;
+    top: -14rem;
+    left: 0;
+    right: 0;
+    z-index: 10000000;
+    box-shadow: 2px 2px 2px #000;
+    transition: top .5s;
+  
+    margin: 0 0 0 0;
+}
+
+.menu{
+    width: 45px;
+    height: 70px;
+    background-color: #000;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 40%;
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    position: fixed;
+    top:  1rem;
+    left: 60px;
+    z-index: 9999999999999999;
+    cursor: pointer;
+    transition: top .4s;
+}
+
+.menu.change{
+    top: 15rem;
+    transition: top .4s;
+}
+
+.change-position{
+    top: 0;
+}
+
+.menu::after{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 15rem;
+    background-color: black;
+    top: -15rem;
+    left: 22.5px;
+    animation: height-move .8s;
+    transition: animation 0.5s 0.2s;
+}
+
+@keyframes height-move {
+    10%{height: 2rem;}
+    20%{height: 4rem;}
+    30%{height: 6rem;}
+    40%{height: 8rem;}
+    50%{height: 10rem; }
+    70%{height: 12rem;}
+    100%{height: 14rem;}
+}
+
+
+nav .container{
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+   
+}
+
+
+nav a{
+color: #d1cfcf;
+  width: 10%;
+cursor: pointer;
+display: flex;
+flex-direction: column;
+align-items: center;
+opacity: 0.3;
+transition: color 0.3s;
+margin:2rem 4rem;
+}
+
+nav a:hover p{
+    color: #fff;
+}
+
+nav a:hover svg{
+    fill: #fff;
+}
+nav.change,
+nav.change .menu::after{
+    top: 0;
+    transition: top .5s .4s;
+
+   
+}
+
+nav a p{
+    color: #808080; 
+    font-size: 2.5rem;
+    font-weight: 900; 
+}
+
+nav .container svg{
+    fill: #808080;
+    /* height: 80px; */
+}
+
+.landpage{
+    background-color: #414040;
+    height: 100vh;
+    width: 100%;
+      display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+     padding-top: 10rem;
+  
+}
+
+.landpage .section-heading{
+    margin-top: 10rem;
+}
+
+
+
+.landpage .meals{
+  height: 40%;
+}
+
+.meals i{
+    color: rgb(209, 209, 41);
+    font-size: 20rem;
+    position: absolute;
+    text-shadow: .2 .2 .2 #000;
+    transform: translate(-50%, 50%) scale(0);
+    transition: transform .5s;
+}
+
+.meals i.change{
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform .5s;
+}
+
+.popular{
+    background-color: #2d2b2b;
+    width: 100%;
+}
+
+.gallery{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: auto;
+   padding-block: 30px;
+}
+
+.popular .gallery .card{
+    width: 300px; 
+    height: 380px;
+    background-color:rgb(209, 209, 41) ;
+    position: relative;
+}
+.gallery .card::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1rem;
+    background-color: rgb(209, 209, 41);
+    top: 0;
+    left: -1rem;
+    transform: skewY(45deg);
+    transform-origin: right;
+    box-shadow: 0.1rem 0.1rem 0.1rem #000;
+}
+
+.gallery .card::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1rem;
+    background-color: rgb(209, 209, 41);
+    top: -1rem;
+    left: -.5rem ;
+    transform: skewX(45deg);
+    transform-origin: right;
+    box-shadow: 0.1rem 0.1rem 0.1rem #000;
+}
+
+.gallery .card img{
+    width: 100%;
+    height: 200px;
+   
+}
+.gallery .card div{
+    margin: 20px;
+}
+
+.gallery .card .description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery .card .description p{
+    font-size: x-large;
+}
+
+.gallery .card .description button{
+    width: 50%;
+    height: 30px;
+    border-radius: 13px;
+    background-color: black;
+    color: #808080;
+    cursor: pointer;
+}
+
+
+.gallery .card:hover{
+    transform: translateY(-20px);
+    transition: transform 0.4s;
+}
+
+.categories{
+    background-color: #414040;
+    
+}
+.categories .container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    width: 80%;
+    justify-content: space-between;
+    margin-inline: auto;
+
+}
+
+
+.categories .container .category{
+    width: 300px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.categories .category img{
+    width: 100%; 
+    height: 100%;
+    border: 1px solid purple;
+    /* box-shadow: 0.3rem 0.3rem 0.1rem #e92929, 0.5rem 0.5rem 0.1rem #a2e946,
+    0.7rem 0.7rem 0.1rem #297ce9, 0.9rem 0.9rem 0.1rem #e92999; */
+}
+.categories .category:hover img{
+    box-shadow: 0.3rem 0.3rem 1rem #e92929 , 0.5rem 0.5rem 1rem #a2e946,
+    0.7rem 0.7rem 1rem #297ce9, 0.9rem 0.9rem 1rem #e92999;
+    filter: blur(0.5rem);
+    transition: box-shadow 0.5s;
+
+}
+
+.categories .category .type{
+    visibility: hidden;
+    color: white;
+  
+}
+
+.categories .category .type h2{
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.categories .category .type h2::before{
+    content: "";
+    width: 94%;
+    height: 2px;
+    position: absolute;
+    background-color: white;
+    top: 30px;
+    visibility: hidden;
+}
+
+.categories .category:hover .type h2::before{
+    animation: movement-width .3s;
+    transition: animation 0.5s;
+}
+
+.categories .category:hover .type h2::before{
+    visibility: visible;
+}
+
+
+.categories .category .type p{
+    position: relative;
+      text-transform: capitalize;
+      font-size: large;
+      width: 80%;
+}
+
+.categories .category::after{
+    content: "";
+    height: 30%;
+    width: 2px;
+    position: absolute;
+    background-color: white;
+    right: 50px;
+    top: 30px;
+    visibility: hidden;
+}
+
+.categories .category:hover::after{
+    animation:  movement-height .3s;
+    transition: animation 0.5s;
+}
+
+.categories .category:hover::after{
+    visibility: visible;
+}
+.categories .category:hover .type{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    visibility: visible;
+}
+
+
+footer{
+    background-color: #414040;
+    padding: 30px;
+}
+
+footer h2{
+    font-size: xx-large;
+    color: rgb(209, 209, 41);
+}
+
+footer .text p{
+    text-transform: capitalize;
+    color: white;
+    margin-bottom: 30px;
+}
+
+
+footer input::placeholder{
+    color: rgb(209, 209, 41);
+}
+
+footer .text {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+    width: 80%;
+    margin-inline: auto;
+}
+
+footer input{
+    width: 85%;
+    height: 30px;
+    padding: 10px;
+    color:rgb(209, 209, 41);
+    outline: 2px solid rgb(209, 209, 41);
+}
+
+
+
+footer .input-form{
+    position: relative;
+    width:350px;
+}
+
+footer button{
+    color: rgb(209, 209, 41);
+    position: absolute;
+    right: 7rem;
+    top: 3px;
+    background-color: transparent;
+    font-size: large;
+    cursor: pointer;
+}
+
+
+
+footer .copywrite{
+    margin-top: 80px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+footer .copywrite::after {
+    content: "";
+    background-color: white;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -50px;
+}
+
+
+@keyframes movement-width {
+    0%{width: 0%;}
+    5%{width: 5%;}
+    10%{width: 10%;}
+    20%{width: 20%;}
+    30%{width: 30%;}
+    40%{width: 40%;}
+    50%{width: 50%;}
+    60%{width: 60%;}
+    70%{width: 70%;}
+    80%{width: 80%;}
+    100%{width: 90%;}
+
+    
+}
+
+@keyframes movement-height {
+    0%{height: 0%;}
+    5%{height: 10%;}
+    10%{height: 15%;}
+    20%{height: 20%;}
+    30%{height: 25%;}
+    40%{height: 30%;}
+    50%{height: 35%;}
+    60%{height: 40%;}
+    70%{height: 45%;}
+    100%{height: 50%;}
+
+    
+}
